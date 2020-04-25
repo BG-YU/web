@@ -37,34 +37,36 @@
     </select>
 
     <insert id="insertBoard" parameterType="com.bg.web.board.model.BoardVO">
+        <selectKey resultType="string" keyProperty="cate_cd" order="BEFORE">
+	        SELECT IFNULL(MAX(CATE_CD), 0) + 1 FROM TBL_BOARD        
+	    </selectKey> 
         <![CDATA[
-        INSERT 
-          INTO TBL_BOARD 
-        (CATE_CD
-        , TITLE
-        , CONTENT
-        , TAG
-        , VIEW_CNT
-        , REG_ID
-        , REG_DT
-        , EDIT_DT)
-        VALUES 
-        (#{cate_cd}
-        , #{title}
-        , #{content}
-        , #{tag}
-        , 0
-        , #{reg_id}
-        , now()
-        , now())
+            INSERT 
+              INTO TBL_BOARD 
+            (CATE_CD
+            , TITLE
+            , CONTENT
+            , TAG
+            , VIEW_CNT
+            , REG_ID
+            , REG_DT
+            , EDIT_DT)
+            VALUES 
+            (#{cate_cd}
+            , #{title}
+            , #{content}
+            , #{tag}
+            , 0
+            , #{reg_id}
+            , now()
+            , now())
         ]]>
     </insert>
 
     <update id="updateBoard" parameterType="com.bg.web.board.model.BoardVO">
         <![CDATA[
             UPDATE TBL_BOARD 
-               SET CATE_CD = #{cate_cd}
-                 , TITLE = #{title}
+               SET TITLE = #{title}
                  , CONTENT = #{content}
                  , TAG = #{tag}
                  , EDIT_DT = now()
