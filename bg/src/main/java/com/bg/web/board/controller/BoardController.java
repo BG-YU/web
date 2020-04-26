@@ -19,16 +19,16 @@ public class BoardController {
     
     @Inject
     private BoardService boardService;
-
+    
     @RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
     public String getBoardList(Model model) throws Exception {
         model.addAttribute("boardList", boardService.getBoardList());
-        return "board/index";
+        return "board/boardList.tiles";
     }
     
     @RequestMapping("/boardForm")
     public String boardForm(@ModelAttribute("boardVO") BoardVO vo, Model model) {
-        return "board/boardForm";
+        return "board/boardForm.tiles";
     }
     
     @RequestMapping(value = "/saveBoard", method = RequestMethod.POST)
@@ -38,7 +38,7 @@ public class BoardController {
         } else {
             boardService.insertBoard(boardVO);
         }
-        return "redirect:/board/getBoardList";
+        return "redirect:/board/getBoardList.tiles";
     }
     
     @RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ public class BoardController {
     @RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
     public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
         model.addAttribute("boardContent", boardService.getBoardContent(bid));
-        return "board/boardContent";
+        return "board/boardContent.tiles";
     }
     
     @RequestMapping(value = "/editForm", method = RequestMethod.GET)
