@@ -19,6 +19,7 @@
         location.href = url;
     });
 </script>
+
 <article>
     <div class="container" role="main">
         <h2>board Content</h2>
