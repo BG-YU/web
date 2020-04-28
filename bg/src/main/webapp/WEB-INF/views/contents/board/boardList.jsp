@@ -13,8 +13,15 @@
         location.href = url;
     }
 </script>
-
-<div class="col-lg-9">
+<div class="card-columns">
+    <c:forEach var="list" items="${boardList}">
+	    <div class="card p-3">
+		    <h5 class="card-title">${list.title}</h5>
+                <p class="card-text">${list.content}</p>
+	    </div>
+    </c:forEach>
+</div>
+<!-- <div class="col-lg-9">
     <div class="table-reponsive">
         <h2>board list</h2>
         <table class="table table-striped table-sm">
@@ -60,7 +67,8 @@
             </tbody>
         </table>
     </div>
+
+</div> -->
     <div >
         <button type="button" class="btn btn-sm btn-primary" id="btnWriteForm">글쓰기</button>
     </div>
-</div>

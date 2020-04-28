@@ -1,4 +1,4 @@
-package com.bg.web.board.dao;
+package com.bg.web.dao;
 
 import java.util.List;
 
@@ -7,14 +7,14 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.bg.web.board.model.BoardVO;
+import com.bg.web.model.BoardVO;
 
 @Repository
-public class BoardDAOImpl implements BoardDAO{
+public class BoardDAOImpl implements BoardDAO {
 
     @Inject
     private SqlSession sqlSession;
-    
+
     @Override
     public List<BoardVO> getBoardList() throws Exception {
         return sqlSession.selectList("com.bg.web.board.boardMapper.getBoardList");

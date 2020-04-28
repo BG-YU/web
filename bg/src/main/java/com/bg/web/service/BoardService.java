@@ -1,14 +1,16 @@
-package com.bg.web.board.service;
+package com.bg.web.service;
 
 import java.util.List;
-import java.util.Map;
-
-import com.bg.web.board.model.BoardVO;
+import com.bg.web.model.BoardVO;
 
 public interface BoardService {
     public List<BoardVO> getBoardList() throws Exception;
+
     public void insertBoard(BoardVO boardVO) throws Exception;
+
     public void updateBoard(BoardVO boardVO) throws Exception;
+
     public void deleteBoard(int bid) throws Exception;
+
     public BoardVO getBoardContent(int bid) throws Exception;
 }

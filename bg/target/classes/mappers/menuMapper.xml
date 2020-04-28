@@ -5,7 +5,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.bg.web.menu.menuMapper">
-    <select id="getCateList" resultType="com.bg.web.menu.model.MenuVO">
+    <select id="getCateList" resultType="com.bg.web.model.MenuVO">
         <![CDATA[
             SELECT CATE_ID
                  , CATE_NM

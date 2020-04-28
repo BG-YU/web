@@ -9,10 +9,10 @@
     <title>BG.YU</title>
 </head>
 <body>
-    <div class="container">
+    <div>
         <tiles:insertAttribute name="nav" />
     </div>
-    <div class="container">
+    <div>
         <div class="row">
             <tiles:insertAttribute name="menu" />
             <tiles:insertAttribute name="body" />
@@ -20,7 +20,7 @@
     </div>
     
     <footer class="py-5 bg-dark">
-        <div class="container">
+        <div>
             <tiles:insertAttribute name="footer" />
         </div>
     </footer>

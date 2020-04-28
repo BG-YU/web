@@ -1,8 +1,8 @@
-package com.bg.web.menu.service;
+package com.bg.web.service;
 
 import java.util.List;
 
-import com.bg.web.menu.model.MenuVO;
+import com.bg.web.model.MenuVO;
 
 public interface MenuService {
     public List<MenuVO> getCateList() throws Exception;

@@ -1,14 +1,19 @@
-package com.bg.web.board.dao;
+package com.bg.web.dao;
 
 import java.util.List;
 
-import com.bg.web.board.model.BoardVO;
+import com.bg.web.model.BoardVO;
 
 public interface BoardDAO {
     public List<BoardVO> getBoardList() throws Exception;
+
     public BoardVO getBoardContent(int bid) throws Exception;
+
     public int insertBoard(BoardVO boardVO) throws Exception;
+
     public int updateBoard(BoardVO boardVO) throws Exception;
+
     public int deleteBoard(int bid) throws Exception;
+
     public int updateViewCnt(int bid) throws Exception;
 }
