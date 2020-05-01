@@ -5,7 +5,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.bg.web.menu.menuMapper">
-    <select id="getCateList" resultType="com.bg.web.model.MenuVO">
+    <select id="getMenuList" parameterType="string" resultType="com.bg.web.model.MenuVO">
         <![CDATA[
             SELECT CATE_ID
                  , CATE_NM
@@ -15,7 +15,51 @@
                  , EDIT_ID
                  , EDIT_DTE
                  , SORT
-              FROM BOCATEMT;
+              FROM BOCATEMT
+             WHERE CATE_CLS = #{sParam}
           ]]>
     </select>
+    
+    <insert id="insertMenuList" parameterType="com.bg.web.model.MenuVO">
+        <![CDATA[
+            INSERT
+              INTO BOCATEMT
+            (CATE_CLS
+            , CATE_ID
+            , CATE_NM
+            , CATE_DEPTH
+            , SORT
+            , REG_ID
+            , REG_DTE
+            , EDIT_ID
+            , EDIT_DTE)
+            VALUES
+            (#{CATE_CLS}
+            , #{CATE_ID}
+            , #{CATE_NM}
+            , #{CATE_DEPTH}
+            , #{SORT}
+            , #{REG_ID}
+            , SYSDATE()
+            , #{EDIT_ID}
+            , SYSDATE());
+        ]]>
+    </insert>
+    <update id="updateMenuList" parameterType="com.bg.web.model.MenuVO">
+        UPDATE BOCATEMT
+           SET CATE_NM    = #{CATE_NM}
+             , CATE_DEPTH = #{CATE_DEPTH}
+             , SORT       = #{SORT}
+         WHERE CATE_CLS = #{CATE_CLS}
+           AND CATE_ID  = #{CATE_ID}
+           AND EDIT_ID  = #{EDIT_ID}
+           AND EDIT_DTE = SYSDATE();
+    </update>
+    
+    <delete id="deleteMenuList" parameterType="com.bg.web.model.MenuVO">
+        DELETE
+          FROM BOCATEMT
+         WHERE CATE_CLS = #{CATE_CLS}
+           AND CATE_ID  = #{CATE_ID}
+    </delete>
 </mapper>

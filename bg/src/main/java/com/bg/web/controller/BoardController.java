@@ -32,7 +32,7 @@ public class BoardController {
 
     @RequestMapping("/boardForm")
     public String boardForm(@ModelAttribute("boardVO") BoardVO vo, Model model) throws Exception{
-        model.addAttribute("menuList", menuService.getCateList());
+        model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardForm.tiles";
     }
 
@@ -56,7 +56,7 @@ public class BoardController {
     @RequestMapping(value = "/getBoardContent", method = RequestMethod.GET)
     public String getBoardContent(Model model, @RequestParam("bid") int bid) throws Exception {
         model.addAttribute("boardContent", boardService.getBoardContent(bid));
-        model.addAttribute("menuList", menuService.getCateList());
+        model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardContent.tiles";
     }
 

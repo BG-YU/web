@@ -16,7 +16,22 @@ public class MenuServiceImpl implements MenuService {
     private MenuDAO menuDAO;
 
     @Override
-    public List<MenuVO> getCateList() throws Exception {
-        return menuDAO.getCateList();
+    public List<MenuVO> getMenuList(String sParam) throws Exception {
+        return menuDAO.getMenuList(sParam);
+    }
+
+    @Override
+    public int insertMenuList(MenuVO menuVO) throws Exception {
+        return menuDAO.insertMenuList(menuVO);
+    }
+
+    @Override
+    public int updateMenuList(MenuVO menuVO) throws Exception {
+        return menuDAO.updateMenuList(menuVO);
+    }
+
+    @Override
+    public int deleteMenuList(MenuVO menuVO) throws Exception {
+        return menuDAO.deleteMenuList(menuVO);
     }
 }

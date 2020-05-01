@@ -12,7 +12,7 @@
         e.preventDefault();
         location.href="${pageContext.request.contextPath}/board/getBoardList";
     });
-    
+
     $(document).ready(function(){
         var mode = '<c:out value="${mode}"/>';
         if ( mode == 'edit'){
