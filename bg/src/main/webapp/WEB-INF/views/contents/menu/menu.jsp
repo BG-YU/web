@@ -4,7 +4,7 @@
 <div class="col-lg-3">
   <div class="list-group">
     <c:forEach var="list" items="${menuList}">
-        <a href="#" class="list-group-item">${list.cate_nm}</a>
+        <a href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${list.cate_nm}" class="list-group-item">${list.cate_nm}</a>
     </c:forEach>
   </div>
 </div>

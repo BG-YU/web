@@ -16,8 +16,10 @@ public class BoardServiceImpl implements BoardService {
     private BoardDAO boardDAO;
 
     @Override
-    public List<BoardVO> getBoardList() throws Exception {
-        return boardDAO.getBoardList();
+    public List<BoardVO> getBoardList(String cate_cd) throws Exception {
+        BoardVO vo = new BoardVO();
+        vo.setCate_cd(cate_cd);
+        return boardDAO.getBoardList(vo);
     }
 
     @Override

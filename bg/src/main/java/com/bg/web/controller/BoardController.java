@@ -25,8 +25,9 @@ public class BoardController {
     private MenuService menuService;
     
     @RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
-    public String getBoardList(Model model) throws Exception {
-        model.addAttribute("boardList", boardService.getBoardList());
+    public String getBoardList(Model model, @RequestParam("cate_cd") String cate_cd) throws Exception {
+        model.addAttribute("boardList", boardService.getBoardList(cate_cd));
+        model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardList.tiles";
     }
 

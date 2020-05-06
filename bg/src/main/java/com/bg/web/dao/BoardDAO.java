@@ -5,7 +5,7 @@ import java.util.List;
 import com.bg.web.model.BoardVO;
 
 public interface BoardDAO {
-    public List<BoardVO> getBoardList() throws Exception;
+    public List<BoardVO> getBoardList(BoardVO boardVO) throws Exception;
 
     public BoardVO getBoardContent(int bid) throws Exception;
 

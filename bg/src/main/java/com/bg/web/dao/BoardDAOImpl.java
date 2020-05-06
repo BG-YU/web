@@ -16,8 +16,8 @@ public class BoardDAOImpl implements BoardDAO {
     private SqlSession sqlSession;
 
     @Override
-    public List<BoardVO> getBoardList() throws Exception {
-        return sqlSession.selectList("com.bg.web.board.boardMapper.getBoardList");
+    public List<BoardVO> getBoardList(BoardVO boardVO) throws Exception {
+        return sqlSession.selectList("com.bg.web.board.boardMapper.getBoardList", boardVO);
     }
 
     @Override

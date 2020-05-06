@@ -82,5 +82,11 @@ public class BoardVO {
     public void setEdit_dt(String edit_dt) {
         this.edit_dt = edit_dt;
     }
-
+    
+    @Override
+    public String toString() {
+        return "BoardVO [bid=" + bid + ", cate_cd=" + cate_cd + ", title=" + title + ", content=" + content + ", tag="
+                + tag + ", view_cnt=" + view_cnt + ", reg_id=" + reg_id + ", reg_dt=" + reg_dt + ", edit_dt=" + edit_dt
+                + "]";
+    }
 }

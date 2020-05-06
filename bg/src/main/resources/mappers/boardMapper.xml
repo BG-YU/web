@@ -5,7 +5,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.bg.web.board.boardMapper">
-    <select id="getBoardList" resultType="com.bg.web.model.BoardVO">
+    <select id="getBoardList" parameterType="com.bg.web.model.BoardVO" resultType="com.bg.web.model.BoardVO">
         <![CDATA[
             SELECT BID
                  , CATE_CD
@@ -16,8 +16,11 @@
                  , REG_ID
                  , REG_DT
                  , EDIT_DT
-              FROM TBL_BOARD
+              FROM BOBORDMT
           ]]>
+          <if test="cate_cd != null and cate_cd != ''">
+              WHERE CATE_CD = #{cate_cd}
+          </if>
     </select>
 
     <select id="getBoardContent" parameterType="com.bg.web.model.BoardVO" resultType="com.bg.web.model.BoardVO">
@@ -31,18 +34,15 @@
                  , REG_ID
                  , REG_DT
                  , EDIT_DT
-              FROM TBL_BOARD
+              FROM BOBORDMT
              WHERE BID = #{bid}
           ]]>
     </select>
 
     <insert id="insertBoard" parameterType="com.bg.web.model.BoardVO">
-        <selectKey resultType="string" keyProperty="cate_cd" order="BEFORE">
-	        SELECT IFNULL(MAX(CATE_CD), 0) + 1 FROM TBL_BOARD        
-	    </selectKey> 
         <![CDATA[
             INSERT 
-              INTO TBL_BOARD 
+              INTO BOBORDMT 
             (CATE_CD
             , TITLE
             , CONTENT
@@ -65,7 +65,7 @@
 
     <update id="updateBoard" parameterType="com.bg.web.model.BoardVO">
         <![CDATA[
-            UPDATE TBL_BOARD 
+            UPDATE BOBORDMT 
                SET TITLE = #{title}
                  , CONTENT = #{content}
                  , TAG = #{tag}
@@ -77,14 +77,14 @@
     <delete id="deleteBoard" parameterType="int">
         <![CDATA[
             DELETE 
-              FROM TBL_BOARD
+              FROM BOBORDMT
              WHERE BID = #{bid}
          ]]>
     </delete>
 
     <update id="updateViewCnt" parameterType="com.bg.web.model.BoardVO">
         <![CDATA[
-            UPDATE TBL_BOARD
+            UPDATE BOBORDMT
                SET VIEW_CNT = VIEW_CNT + 1
              WHERE BID = #{bid}
          ]]>
