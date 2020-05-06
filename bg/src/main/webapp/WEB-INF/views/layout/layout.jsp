@@ -10,28 +10,30 @@
 
 <style>
 .wrapper{
-border: 1px solid #FFBB00;
+/* border: 1px solid #FFBB00; */
 width:1054px; 
 padding: 10px; 
 top: 10px;
 left: 50%;
 overflow: hidden;
-width:79%;
+width:100%;
 }
 
 .contents{
-border: 1px solid #487BE1;
+/* border: 1px solid #487BE1; */
 width:800px;
 float: left;
 padding: 10px;
+width:78%;
 }
 
 .sidebar{
-border: 1px solid #487BE1;
-width:200px;
+/* border: 1px solid #487BE1; */
+width:20%;
 float: left;
 padding: 10px;
 margin-left: 10px;
+
 }
 </style>
     
@@ -49,7 +51,7 @@ margin-left: 10px;
         </div>
     </div>
     
-    <footer class="py-5 bg-dark">
+    <footer>
         <div>
             <tiles:insertAttribute name="footer" />
         </div>
