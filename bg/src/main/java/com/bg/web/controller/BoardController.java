@@ -45,7 +45,7 @@ public class BoardController {
         } else {
             boardService.insertBoard(boardVO);
         }
-        return "redirect:contents/board/getBoardList.tiles";
+        return "redirect:/board/getBoardList?cate_cd=test1";
     }
 
     @RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)

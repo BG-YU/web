@@ -31,7 +31,7 @@
     <form:hidden path="bid"/>
     <input type="hidden" name="mode"/>
     <form:hidden path="edit_id" value="123" />
-    <form:hidden path="cate_cd" value="${cate_cd}"/>
+    <form:hidden path="cate_cd" value="test1"/>
     
     <div class="mb-3">
         <label for="title">제목</label>

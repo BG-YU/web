@@ -4,7 +4,7 @@
 <script>
     $(document).on('click', '#btnWriteForm', function(e){
         e.preventDefault();
-        location.href = "${pageContext.request.contextPath}/board/boardForm?";
+        location.href = "${pageContext.request.contextPath}/board/boardForm";
     });
     
     function fn_contentView(bid){

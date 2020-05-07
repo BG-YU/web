@@ -7,10 +7,14 @@
 <mapper namespace="com.bg.web.board.boardMapper">
     <select id="getBoardList" parameterType="com.bg.web.model.BoardVO" resultType="com.bg.web.model.BoardVO">
         <![CDATA[
-            SELECT BID
+            SELECT @ROWNUM := @ROWNUM + 1 AS NO
+                 , BID
                  , CATE_CD
                  , TITLE
-                 , CONTENT
+                 , CASE 
+                   WHEN CHAR_LENGTH(CONTENT) < 300 THEN CONTENT
+                   ELSE CONCAT(SUBSTR(CONTENT, 1, 300), '...')
+                    END AS CONTENT
                  , TAG
                  , VIEW_CNT
                  , REG_ID
@@ -18,9 +22,15 @@
                  , EDIT_DTE
                  , EDIT_DTE
               FROM BOBORDMT
+             WHERE (@ROWnum := 0) = 0
           ]]>
           <if test="cate_cd != null and cate_cd != ''">
-              WHERE CATE_CD = #{cate_cd}
+              AND CATE_CD = #{cate_cd}
+            ORDER BY REG_DTE DESC
+          </if>
+          <if test="cate_cd == null or cate_cd == ''">
+              ORDER BY REG_DTE DESC
+              LIMIT 5
           </if>
     </select>
 
