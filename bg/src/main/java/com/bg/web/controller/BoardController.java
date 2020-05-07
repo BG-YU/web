@@ -67,6 +67,7 @@ public class BoardController {
         model.addAttribute("boardContent", boardService.getBoardContent(bid));
         model.addAttribute("mode", mode);
         model.addAttribute("boardVO", new BoardVO());
+        model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardForm.tiles";
     }
 }

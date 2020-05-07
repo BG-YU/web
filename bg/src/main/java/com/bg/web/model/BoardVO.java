@@ -8,8 +8,9 @@ public class BoardVO {
     public String tag;
     public int view_cnt;
     public String reg_id;
-    public String reg_dt;
-    public String edit_dt;
+    public String reg_dte;
+    public String edit_id;
+    public String edit_dte;
 
     public int getBid() {
         return bid;
@@ -67,26 +68,34 @@ public class BoardVO {
         this.reg_id = reg_id;
     }
 
-    public String getReg_dt() {
-        return reg_dt;
+    public String getReg_dte() {
+        return reg_dte;
     }
 
-    public void setReg_dt(String reg_dt) {
-        this.reg_dt = reg_dt;
+    public void setReg_dt(String reg_dte) {
+        this.reg_dte = reg_dte;
+    }
+    
+    public String getEdit_id() {
+        return edit_id;
     }
 
-    public String getEdit_dt() {
-        return edit_dt;
+    public void setEdit_id(String edit_id) {
+        this.edit_id = edit_id;
+    }
+    
+    public String getEdit_dte() {
+        return edit_dte;
     }
 
-    public void setEdit_dt(String edit_dt) {
-        this.edit_dt = edit_dt;
+    public void setEdit_dt(String edit_dte) {
+        this.edit_dte = edit_dte;
     }
     
     @Override
     public String toString() {
         return "BoardVO [bid=" + bid + ", cate_cd=" + cate_cd + ", title=" + title + ", content=" + content + ", tag="
-                + tag + ", view_cnt=" + view_cnt + ", reg_id=" + reg_id + ", reg_dt=" + reg_dt + ", edit_dt=" + edit_dt
+                + tag + ", view_cnt=" + view_cnt + ", reg_id=" + reg_id + ", reg_dte=" + reg_dte + ", edit_dte=" + edit_dte
                 + "]";
     }
 }

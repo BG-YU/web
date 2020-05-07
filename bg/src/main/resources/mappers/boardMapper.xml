@@ -14,8 +14,9 @@
                  , TAG
                  , VIEW_CNT
                  , REG_ID
-                 , REG_DT
-                 , EDIT_DT
+                 , REG_DTE
+                 , EDIT_DTE
+                 , EDIT_DTE
               FROM BOBORDMT
           ]]>
           <if test="cate_cd != null and cate_cd != ''">
@@ -32,8 +33,9 @@
                  , TAG
                  , VIEW_CNT
                  , REG_ID
-                 , REG_DT
-                 , EDIT_DT
+                 , REG_DTE
+                 , EDIT_ID
+                 , EDIT_DTE
               FROM BOBORDMT
              WHERE BID = #{bid}
           ]]>
@@ -49,8 +51,9 @@
             , TAG
             , VIEW_CNT
             , REG_ID
-            , REG_DT
-            , EDIT_DT)
+            , REG_DTE
+            , EDIT_ID
+            , EDIT_DTE)
             VALUES 
             (#{cate_cd}
             , #{title}
@@ -58,8 +61,9 @@
             , #{tag}
             , 0
             , #{reg_id}
-            , now()
-            , now())
+            , NOW()
+            , #{edit_id}
+            , NOW())
         ]]>
     </insert>
 
@@ -69,7 +73,7 @@
                SET TITLE = #{title}
                  , CONTENT = #{content}
                  , TAG = #{tag}
-                 , EDIT_DT = now()
+                 , EDIT_DTE = now()
              WHERE BID = ${bid}
          ]]>
     </update>

@@ -4,7 +4,7 @@
 <script>
     $(document).on('click', '#btnWriteForm', function(e){
         e.preventDefault();
-        location.href = "${pageContext.request.contextPath}/board/boardForm";
+        location.href = "${pageContext.request.contextPath}/board/boardForm?";
     });
     
     function fn_contentView(bid){
@@ -21,7 +21,11 @@
                 <a href="#" onClick="fn_contentView(<c:out value="${list.bid}"/>)">${list.title}</a>
             </h5>
             <p class="card-text">${list.content}</p>
-            <a href="#" class="btn btn-primary">더보기</a>
+            <a href="#" onClick="fn_contentView(<c:out value="${list.bid}"/>)" class="btn btn-primary">더보기</a>
         </div>
     </div>
 </c:forEach>
+
+<div>
+    <button type="button" class="btn btn-primary" id="btnWriteForm" >글쓰기</button>
+</div>

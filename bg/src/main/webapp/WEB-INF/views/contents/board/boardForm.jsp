@@ -26,33 +26,34 @@
         }
     });
 </script>
-<div>
-    <h2>board Form</h2>
-    <form:form name="form" id="form" role="form" modelAttribute="boardVO" method="post" action="${pageContext.request.contextPath}/board/saveBoard">
-        <form:hidden path="bid"/>
-        <input type="hidden" name="mode"/>
-        <div class="mb-3">
-            <label for="title">제목</label>
-            <form:input path="title" class="form-control" id="title" placeholder="제목을 입력해 주세요" />
-        </div>
-        
-        <div class="mb-3">
-            <label for="reg_id">작성자</label>
-            <form:input path="reg_id" class="form-control" id="reg_id" placeholder="이름을 입력해 주세요" />
-        </div>
-        
-        <div class="mb-3">
-            <label for="content">내용</label>
-            <form:textarea path="content" class="form-control" rows="5" id="content" placeholder="내용을 입력해 주세요"  />
-        </div>
-        
-        <div class="mb-3">
-            <label for="tag">TAG</label>
-            <form:input path="tag" class="form-control" id="tag" placeholder="태그를 입력해 주세요" />
-        </div>
-    </form:form>
-    <div>
-        <button type="button" class="btn btn-sm btn-primary" id="btnSave">저장</button>
-        <button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
+
+<form:form name="form" id="form" role="form" modelAttribute="boardVO" method="post" action="${pageContext.request.contextPath}/board/saveBoard">
+    <form:hidden path="bid"/>
+    <input type="hidden" name="mode"/>
+    <form:hidden path="edit_id" value="123" />
+    <form:hidden path="cate_cd" value="${cate_cd}"/>
+    
+    <div class="mb-3">
+        <label for="title">제목</label>
+        <form:input path="title" class="form-control" id="title" placeholder="제목을 입력해 주세요" />
     </div>
+    
+    <div class="mb-3">
+        <label for="reg_id">작성자</label>
+        <form:input path="reg_id" class="form-control" id="reg_id" placeholder="이름을 입력해 주세요" />
+    </div>
+    
+    <div class="mb-3">
+        <label for="content">내용</label>
+        <form:textarea path="content" class="form-control" rows="10" id="content" placeholder="내용을 입력해 주세요"  />
+    </div>
+    
+    <div class="mb-3">
+        <label for="tag">TAG</label>
+        <form:input path="tag" class="form-control" id="tag" placeholder="태그를 입력해 주세요" />
+    </div>
+</form:form>
+<div>
+    <button type="button" class="btn btn-sm btn-primary" id="btnSave">저장</button>
+    <button type="button" class="btn btn-sm btn-primary" id="btnList">목록</button>
 </div>
