@@ -9,8 +9,11 @@
 <title>BG.YU</title>
 
 <style>
-
-
+#header{
+position: fixed;
+width: 100%;
+z-index: 9;
+}
 #wrapper{
 border: 1px solid #FFBB00;
 width:1054px; 
@@ -27,6 +30,7 @@ width:800px;
 float: left;
 padding: 10px;
 width:78%;
+margin-top: 50px;
 }
 
 #sidebar{
@@ -35,7 +39,7 @@ width:20%;
 float: left;
 padding: 10px;
 margin-right: 10px;
-
+margin-top: 50px;
 }
 </style>
     

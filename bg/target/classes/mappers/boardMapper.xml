@@ -22,7 +22,7 @@
                  , EDIT_DTE
                  , EDIT_DTE
               FROM BOBORDMT
-             WHERE (@ROWnum := 0) = 0
+             WHERE (@ROWNUM := 0) = 0
           ]]>
           <if test="cate_cd != null and cate_cd != ''">
               AND CATE_CD = #{cate_cd}
