@@ -31,6 +31,7 @@ float: left;
 padding: 10px;
 width:78%;
 margin-top: 50px;
+margin-left: 400px;
 }
 
 #sidebar{
@@ -40,6 +41,7 @@ float: left;
 padding: 10px;
 margin-right: 10px;
 margin-top: 50px;
+position: fixed;
 }
 </style>
     
