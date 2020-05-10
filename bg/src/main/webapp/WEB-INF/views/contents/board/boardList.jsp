@@ -27,5 +27,23 @@
 </c:forEach>
 
 <div>
-    <button type="button" class="btn btn-primary" id="btnWriteForm" >글쓰기</button>
+    <nav aria-label="..." style="float:left;">
+	  <ul class="pagination">
+	    <li class="page-item disabled">
+	      <span class="page-link">Previous</span>
+	    </li>
+	    <li class="page-item"><a class="page-link" href="#">1</a></li>
+	    <li class="page-item active" aria-current="page">
+	      <span class="page-link">
+	        2
+	        <span class="sr-only">(current)</span>
+	      </span>
+	    </li>
+	    <li class="page-item"><a class="page-link" href="#">3</a></li>
+	    <li class="page-item">
+	      <a class="page-link" href="#">Next</a>
+	    </li>
+	  </ul>
+	</nav>
+    <button type="button" class="btn btn-primary" id="btnWriteForm" style="float:left;">글쓰기</button>
 </div>
