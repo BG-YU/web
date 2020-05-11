@@ -16,12 +16,23 @@ public class BoardServiceImpl implements BoardService {
     private BoardDAO boardDAO;
 
     @Override
-    public List<BoardVO> getBoardList(String cate_cd) throws Exception {
+    public List<BoardVO> getBoardList(String cate_cd, int page) throws Exception {
+        int fromPage = 0;
+        fromPage = (page - 1) * 5;
+        
         BoardVO vo = new BoardVO();
         vo.setCate_cd(cate_cd);
+        vo.setPage(fromPage);
         return boardDAO.getBoardList(vo);
     }
 
+    @Override
+    public BoardVO getBoardCount(String cate_cd) throws Exception {
+        BoardVO vo = new BoardVO();
+        vo.setCate_cd(cate_cd);
+        return boardDAO.getBoardCount(vo);
+    }
+    
     @Override
     public void insertBoard(BoardVO boardVO) throws Exception {
         boardDAO.insertBoard(boardVO);

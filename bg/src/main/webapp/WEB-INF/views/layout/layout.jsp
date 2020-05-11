@@ -8,22 +8,19 @@
 <title>BG.YU</title>
 
 <style>
-#header{
+#header {
 position: fixed;
 width: 100%;
 z-index: 9;
 }
-#wrapper{
-border: 1px solid #FFBB00;
-width:1054px; 
+
+#wrapper {
+border: 1px solid #FFBB00; 
 padding: 10px; 
 top: 10px;
-left: 50%;
-overflow: hidden;
-width:100%;
 }
 
-#contents{
+#contents {
 border: 1px solid #487BE1;
 width:800px;
 float: left;
@@ -33,7 +30,7 @@ margin-top: 50px;
 margin-left: 400px;
 }
 
-#sidebar{
+#sidebar {
 border: 1px solid #487BE1;
 width:20%;
 float: left;

@@ -20,7 +20,8 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model) throws Exception {
-        model.addAttribute("boardList", boardService.getBoardList(""));
+        model.addAttribute("mode", "main");
+        model.addAttribute("boardList", boardService.getBoardList("", 0));
         model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardList.tiles";
     }

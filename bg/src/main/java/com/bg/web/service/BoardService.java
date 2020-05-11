@@ -4,7 +4,9 @@ import java.util.List;
 import com.bg.web.model.BoardVO;
 
 public interface BoardService {
-    public List<BoardVO> getBoardList(String cate_cd) throws Exception;
+    public List<BoardVO> getBoardList(String cate_cd, int page) throws Exception;
+    
+    public BoardVO getBoardCount(String cate_cd) throws Exception;
 
     public void insertBoard(BoardVO boardVO) throws Exception;
 

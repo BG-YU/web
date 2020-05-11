@@ -11,6 +11,8 @@ public class BoardVO {
     public String reg_dte;
     public String edit_id;
     public String edit_dte;
+    public int page;
+    public int board_cnt;
 
     public int getBid() {
         return bid;
@@ -92,6 +94,21 @@ public class BoardVO {
         this.edit_dte = edit_dte;
     }
     
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+    
+    public int getBoard_cnt() {
+        return board_cnt;
+    }
+
+    public void setBoard_cnt(int board_cnt) {
+        this.board_cnt = board_cnt;
+    }
     @Override
     public String toString() {
         return "BoardVO [bid=" + bid + ", cate_cd=" + cate_cd + ", title=" + title + ", content=" + content + ", tag="

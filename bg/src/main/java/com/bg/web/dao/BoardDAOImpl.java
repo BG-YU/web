@@ -19,7 +19,12 @@ public class BoardDAOImpl implements BoardDAO {
     public List<BoardVO> getBoardList(BoardVO boardVO) throws Exception {
         return sqlSession.selectList("com.bg.web.board.boardMapper.getBoardList", boardVO);
     }
-
+    
+    @Override
+    public BoardVO getBoardCount(BoardVO boardVO) throws Exception {
+        return sqlSession.selectOne("com.bg.web.board.boardMapper.getBoardCount", boardVO);
+    }
+    
     @Override
     public BoardVO getBoardContent(int bid) throws Exception {
         return sqlSession.selectOne("com.bg.web.board.boardMapper.getBoardContent", bid);

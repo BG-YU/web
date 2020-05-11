@@ -25,8 +25,10 @@ public class BoardController {
     private MenuService menuService;
     
     @RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
-    public String getBoardList(Model model, @RequestParam("cate_cd") String cate_cd) throws Exception {
-        model.addAttribute("boardList", boardService.getBoardList(cate_cd));
+    public String getBoardList(Model model, @RequestParam("cate_cd") String cate_cd, @RequestParam("page") int page) throws Exception {
+        model.addAttribute("cate_cd", cate_cd);
+        model.addAttribute("boardList", boardService.getBoardList(cate_cd, page));
+        model.addAttribute("boardCnt", boardService.getBoardCount(cate_cd));
         model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardList.tiles";
     }
@@ -45,7 +47,7 @@ public class BoardController {
         } else {
             boardService.insertBoard(boardVO);
         }
-        return "redirect:/board/getBoardList?cate_cd=test1";
+        return "redirect:/board/getBoardList?cate_cd=test1&page=1";
     }
 
     @RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)
