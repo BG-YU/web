@@ -7,7 +7,7 @@ import com.bg.web.model.BoardVO;
 public interface BoardDAO {
     public List<BoardVO> getBoardList(BoardVO boardVO) throws Exception;
 
-    public BoardVO getBoardCount(BoardVO boardVO) throws Exception;
+    public int getBoardRowCount(String cate_cd) throws Exception;
     
     public BoardVO getBoardContent(int bid) throws Exception;
 

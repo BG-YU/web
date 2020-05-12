@@ -27,15 +27,17 @@
           <if test="cate_cd != null and cate_cd != ''">
               AND CATE_CD = #{cate_cd}
             ORDER BY REG_DTE DESC
+                   , BID DESC 
             LIMIT #{page}, 5
           </if>
           <if test="cate_cd == null or cate_cd == ''">
               ORDER BY REG_DTE DESC
+                     , BID DESC
               LIMIT 5
           </if>
     </select>
     
-    <select id="getBoardCount" parameterType="com.bg.web.model.BoardVO" resultType="com.bg.web.model.BoardVO">
+    <select id="getBoardRowCount" parameterType="string" resultType="int">
         <![CDATA[
             SELECT CEIL(COUNT(*) / 5) AS BOARD_CNT
               FROM BOBORDMT

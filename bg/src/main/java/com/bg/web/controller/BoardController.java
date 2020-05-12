@@ -28,7 +28,7 @@ public class BoardController {
     public String getBoardList(Model model, @RequestParam("cate_cd") String cate_cd, @RequestParam("page") int page) throws Exception {
         model.addAttribute("cate_cd", cate_cd);
         model.addAttribute("boardList", boardService.getBoardList(cate_cd, page));
-        model.addAttribute("boardCnt", boardService.getBoardCount(cate_cd));
+        model.addAttribute("boardPaging", boardService.getBoardPaging(cate_cd, page));
         model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardList.tiles";
     }

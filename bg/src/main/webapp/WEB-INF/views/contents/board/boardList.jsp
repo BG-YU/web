@@ -37,25 +37,48 @@
 
 <div id="board_footer">
     <div style="float:left;">
-        
         <ul class="pagination">
-                <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                </li>
-                <c:forEach var="i" begin="1" end="${boardCnt.board_cnt}" step="1">
-	                <li class="page-item">
-	                    <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${i}">${i}</a>
-	                </li>
-                </c:forEach>
-                
-<!--                 <li class="page-item active" aria-current="page"> -->
-<!--                     <span class="page-link">2<span class="sr-only">(current)</span></span> -->
-<!--                 </li> -->
-<%--                 <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=3">3</a></li> --%>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
+            <c:choose>
+                <c:when test="${boardPaging.page_prev == 0}">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${boardPaging.page_prev}">Previous</a>
+                    </li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item">
+                        <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${boardPaging.page_prev}">Previous</a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
+            
+            <c:forEach var="i" begin="${boardPaging.page_start}" end="${boardPaging.page_end}" step="1">
+                <c:choose>
+                    <c:when test="${i == boardPaging.page_current}">
+                        <li class="page-item active">
+                            <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${i}">${i}</a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="page-item">
+                            <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${i}">${i}</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+            
+            <c:choose>
+                <c:when test="${boardPaging.page_next >= boardPaging.board_row_cnt}">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${boardPaging.page_next}">Next</a>
+                    </li>
+                </c:when>
+                <c:otherwise>
+                    <li class="page-item">
+                        <a class="page-link" href="${pageContext.request.contextPath}/board/getBoardList?cate_cd=${cate_cd}&page=${boardPaging.page_next}">Next</a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
+        </ul>
     </div>
     
     <div style="float:right;">

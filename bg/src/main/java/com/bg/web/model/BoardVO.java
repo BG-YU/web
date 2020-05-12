@@ -12,7 +12,12 @@ public class BoardVO {
     public String edit_id;
     public String edit_dte;
     public int page;
-    public int board_cnt;
+    public int board_row_cnt;
+    public int page_start;
+    public int page_end;
+    public int page_prev;
+    public int page_next;
+    public int page_current;
 
     public int getBid() {
         return bid;
@@ -102,17 +107,60 @@ public class BoardVO {
         this.page = page;
     }
     
-    public int getBoard_cnt() {
-        return board_cnt;
+    public int getBoard_row_cnt() {
+        return board_row_cnt;
     }
 
-    public void setBoard_cnt(int board_cnt) {
-        this.board_cnt = board_cnt;
+    public void setBoard_row_cnt(int board_row_cnt) {
+        this.board_row_cnt = board_row_cnt;
     }
+    
+    public int getPage_start() {
+        return page_start;
+    }
+
+    public void setPage_start(int page_start) {
+        this.page_start = page_start;
+    }
+
+    public int getPage_end() {
+        return page_end;
+    }
+
+    public void setPage_end(int page_end) {
+        this.page_end = page_end;
+    }
+
+    public int getPage_prev() {
+        return page_prev;
+    }
+
+    public void setPage_prev(int page_prev) {
+        this.page_prev = page_prev;
+    }
+
+    public int getPage_next() {
+        return page_next;
+    }
+
+    public void setPage_next(int page_next) {
+        this.page_next = page_next;
+    }
+
+    public int getPage_current() {
+        return page_current;
+    }
+
+    public void setPage_current(int page_current) {
+        this.page_current = page_current;
+    }
+
     @Override
     public String toString() {
         return "BoardVO [bid=" + bid + ", cate_cd=" + cate_cd + ", title=" + title + ", content=" + content + ", tag="
-                + tag + ", view_cnt=" + view_cnt + ", reg_id=" + reg_id + ", reg_dte=" + reg_dte + ", edit_dte=" + edit_dte
-                + "]";
+                + tag + ", view_cnt=" + view_cnt + ", reg_id=" + reg_id + ", reg_dte=" + reg_dte + ", edit_id="
+                + edit_id + ", edit_dte=" + edit_dte + ", page=" + page + ", board_row_cnt=" + board_row_cnt + ", page_start="
+                + page_start + ", page_end=" + page_end + ", page_prev=" + page_prev + ", page_next=" + page_next
+                + ", page_current=" + page_current + "]";
     }
 }

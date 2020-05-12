@@ -6,7 +6,7 @@ import com.bg.web.model.BoardVO;
 public interface BoardService {
     public List<BoardVO> getBoardList(String cate_cd, int page) throws Exception;
     
-    public BoardVO getBoardCount(String cate_cd) throws Exception;
+    public BoardVO getBoardPaging(String cate_cd, int page_start) throws Exception;
 
     public void insertBoard(BoardVO boardVO) throws Exception;
 

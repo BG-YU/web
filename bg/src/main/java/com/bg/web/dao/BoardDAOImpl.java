@@ -21,8 +21,8 @@ public class BoardDAOImpl implements BoardDAO {
     }
     
     @Override
-    public BoardVO getBoardCount(BoardVO boardVO) throws Exception {
-        return sqlSession.selectOne("com.bg.web.board.boardMapper.getBoardCount", boardVO);
+    public int getBoardRowCount(String cate_cd) throws Exception {
+        return sqlSession.selectOne("com.bg.web.board.boardMapper.getBoardRowCount", cate_cd);
     }
     
     @Override
