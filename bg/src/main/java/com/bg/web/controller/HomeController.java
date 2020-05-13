@@ -24,5 +24,6 @@ public class HomeController {
         model.addAttribute("boardList", boardService.getBoardList("", 0));
         model.addAttribute("menuList", menuService.getMenuList("nomal"));
         return "contents/board/boardList.tiles";
+//        return "contents/main/main";
     }
 }

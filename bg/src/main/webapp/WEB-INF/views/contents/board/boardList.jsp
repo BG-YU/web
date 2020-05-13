@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
-    $(document).on('click', '#btnWriteForm', function(e){
+    $(document).on('click', '#Btn_WriteForm', function(e){
         e.preventDefault();
         location.href = "${pageContext.request.contextPath}/board/boardForm";
     });
@@ -82,6 +82,6 @@
     </div>
     
     <div style="float:right;">
-        <button type="button" class="btn btn-primary" id="btnWriteForm">글쓰기</button>
+        <button type="button" class="btn btn-primary" id="Btn_WriteForm">글쓰기</button>
     </div>
 </div>

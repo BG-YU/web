@@ -15,24 +15,23 @@ z-index: 9;
 }
 
 #wrapper {
-border: 1px solid #FFBB00; 
+/* border: 1px solid #FFBB00;  */
 padding: 10px; 
 top: 10px;
 }
 
 #contents {
-border: 1px solid #487BE1;
-width:800px;
+/* border: 1px solid #487BE1; */
+width:1000px;
 float: left;
 padding: 10px;
-width:78%;
 margin-top: 50px;
 margin-left: 400px;
 }
 
 #sidebar {
-border: 1px solid #487BE1;
-width:20%;
+/* border: 1px solid #487BE1; */
+width:400px;
 float: left;
 padding: 10px;
 margin-right: 10px;
