@@ -7,57 +7,27 @@
 // });
 
 $(document).ready(function(){
-    $(".slideBtn").click(function(){    
-        if($("#sidenav").width() == 0){      
-            document.getElementById("sidenav").style.width = "350px";
-            document.getElementById("navbarSupportedContent").style.paddingRight = "350px";
-            document.getElementById("slidebtn").style.paddingRight = "350px";
-            document.getElementById("Btn_SignIn").style.paddingRight = "350px";
-            
-        }else{
-            document.getElementById("sidenav").style.width = "0";
-            document.getElementById("navbarSupportedContent").style.paddingRight = "0";
-            document.getElementById("slidebtn").style.paddingRight = "0";
-            document.getElementById("Btn_SignIn").style.paddingRight = "0";
-        }
-    });
+  $("#Btn_SignIn").click(function(){    
+    if($("#login_wrapper").width() == 0){      
+        document.getElementById("login_wrapper").style.width = "250px";
+    }else{
+        document.getElementById("login_wrapper").style.width = "0px";
+    }
+  });
 });
-
 </script>
 
 <style>
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 10px;
-  opacity: 0.5;
+#login_wrapper{
+    height:100%;
+    width: 0px;
+    right:10px;
+    top:60px;
+    position: fixed;
+    display:block;
+    overflow-x: hidden;
+    z-index:1;
 }
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.slideBtn {
-  transition: .5s;
-  position: fixed;
-  right: 0;  
-  font-size:30px;
-  cursor:pointer;
-  margin-right:10px;
-}
-
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,7 +35,7 @@ $(document).ready(function(){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -94,13 +64,21 @@ $(document).ready(function(){
                 </li>
             </ul>
             
-<!--             <div class="btn btn-primary" id="Btn_SignIn">Sign In</div> -->
-            <div id="sidenav" class="sidenav">
-                <div id="slidebtn" class="slideBtn">&#9776; Sign In</div>  
-                <a href="#">menu1</a>
-                <a href="#">menu2</a>
-                <a href="#">menu3</a>
-                <a href="#">menu4</a>
+            <button class="btn btn-outline-success my-2 my-sm-0" id="Btn_SignIn">Sign In</button>
+            
+            <div id="login_wrapper">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">설명글</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-        </div>
+      </div>
 </nav>
