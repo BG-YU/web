@@ -27,6 +27,15 @@ $(document).ready(function(){
     display:block;
     overflow-x: hidden;
     z-index:1;
+    background-color: white;
+}
+
+.btn_sign_left {
+    float:left;
+}
+
+.btn_sign_right {
+    float:right;
 }
 </style>
 
@@ -77,7 +86,8 @@ $(document).ready(function(){
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary btn_sign_left">회원가입</button>
+                  <button type="submit" class="btn btn-primary btn_sign_right">로그인</button>
                 </form>
             </div>
       </div>
