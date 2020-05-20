@@ -51,7 +51,7 @@ $(document).ready(function(){
                     <a class="nav-link" href="${pageContext.request.contextPath}/menu/getMenuList?param=admin">관리자 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">BLOG</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}">BLOG</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">CALENDAR</a>
