@@ -57,7 +57,7 @@ $(document).ready(function(){
                     <a class="nav-link" href="#">CALENDAR</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CRAWLING</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/crawling/getCrawlingList">CRAWLING</a>
                 </li>
                 
                 <li class="nav-item dropdown">

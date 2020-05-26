@@ -23,7 +23,7 @@
 <div class="bg-white rounded shadow-sm">
     <div class="board_title"><h3>${boardContent.title}</h3></div>
     <div class="board_info_box">
-        <span class="board_author"><c:out value="${boardContent.reg_id}"/>,</span><span class="board_date"><c:out value="${boardContent.reg_dte}"/></span>
+        <span class="board_author">${boardContent.reg_id},</span><span class="board_date">${boardContent.reg_dte}</span>
     </div>
     <div class="board_content">${boardContent.content}</div>
     <div class="board_tag">TAG : <c:out value="${boardContent.tag}"/></div>
